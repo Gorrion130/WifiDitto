@@ -1,8 +1,6 @@
-# Houdini
+# WifiDitto
 
 A script to bypass a whole bunch of WiFi captive portals (e.g. at hotels, cruise ships etc.)
-
-This is the Houdini of WiFi ;)
 
 # Dependencies
 
@@ -14,17 +12,17 @@ This is the Houdini of WiFi ;)
 
 It's pretty easy! Just execute the following command:
 
-<pre><code>git clone https://github.com/ariakis/houdini/ && cd houdini && bash install</code></pre>
+<pre><code>git clone [https://github.com/Gorrion130/WifiDitto/] && cd houdini && bash install</code></pre>
 
 # How to use it
 
-Just run houdini with
+Just run WifiDitto with
 
-<pre><code>./houdini {wireless interface name} {target AP name}</code></pre>
+<pre><code>bash WifiDitto {wireless interface name} {target AP name}</code></pre>
 
 For example, if your interface was called <code>wlan0</code> and you were targeting <code>Free Hotel WiFi</code>, then you would run
 
-<pre><code>./houdini wlan0 'Free Hotel WiFi'</code></pre>
+<pre><code>bash WifiDitto wlan0 'Free Hotel WiFi'</code></pre>
 
 This will start scanning for associated MAC addresses. Once you think there are enough clients in airodump-ng, hit ctrl-c and then each MAC assoctiated to your target will be checked for internet access.
 
