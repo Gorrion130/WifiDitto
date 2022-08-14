@@ -12,7 +12,7 @@ A script to bypass a whole bunch of WiFi captive portals (e.g. at hotels, cruise
 
 It's pretty easy! Just execute the following command:
 
-<pre><code>git clone https://github.com/Gorrion130/WifiDitto/ && cd houdini && bash install</code></pre>
+<pre><code>git clone https://github.com/Gorrion130/WifiDitto/ && cd WifiDitto && bash install</code></pre>
 
 # How to use it
 
