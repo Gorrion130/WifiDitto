@@ -22,7 +22,7 @@ then
 		macchanger -m $1 $interface # change current device mac to input mac
 
 	fi
-
+	
 	ifconfig $interface up
 	dhclient $interface &> /dev/null # get a new ip
 

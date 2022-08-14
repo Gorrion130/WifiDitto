@@ -51,21 +51,7 @@ then
 				echo "Enjoy your free WiFi ;)"
 				echo "Exiting..."
 			else
-				createappath="create_ap" # read -p "Path of create_ap folder (usually just create_ap unless you moved it): " createappath
-				read -p "Name of access point: " apname
-
-				doLoop=1
-				while [ $doLoop = 1 ]
-				do
-					read -p "AP password (min 8 chars): " appass
-					if [ ${#appass} -lt 8 ] ; then
-						echo "Password is not long enough! 8 chars minimum please :)"
-					else
-						doLoop=0
-					fi
-				done
-
-				$createappath/create_ap $interface $interface $apname $appass
+				wihotspot&
 			fi
 
 			# script end :)
