@@ -3,10 +3,11 @@
 if [ $# -eq 2 ]
 then
 	interface=$2
-        interfacemon="${interface}mon"
+        interfacemon="${interface}"
 
 
 	ifconfig $interface down
+	nmcli radio wifi off
 	dhclient -r $interface &> /dev/null # release ip
 
 	if [ "$1" = "reset" ]; then
@@ -24,6 +25,7 @@ then
 	fi
 	
 	ifconfig $interface up
+	nmcli radio wifi on
 	dhclient $interface &> /dev/null # get a new ip
 
 else
