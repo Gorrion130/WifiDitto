@@ -8,7 +8,7 @@ fi
 if [ $# -ge 2 ]; then
 
     interface=$1
-    interfacemon="${interface}mon"
+    interfacemon="${interface}"
 
     essid=$2
 
@@ -41,6 +41,8 @@ if [ $# -ge 2 ]; then
     # Disable monitor mode
     echo -n "Stopping monitor mode on $interface... "
     airmon-ng stop $interfacemon &> /dev/null
+    nmcli radio wifi off
+    nmcli radio wifi on
     echo "Done"
 
     # strip the associated mac addresses from airodump csv file
