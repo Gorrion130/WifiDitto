@@ -1,5 +1,5 @@
 #!/bin/bash
-testip=https://1.1.1.1
+testip=8.8.8.8
 maccount=$(($2))
 interface=$3
 essid=$4
