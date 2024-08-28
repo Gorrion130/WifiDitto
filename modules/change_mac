@@ -1,9 +1,10 @@
 #!/bin/bash
 
-if [ $# -eq 2 ]
+if [ $# -eq 3 ]
 then
 	interface=$2
         interfacemon="${interface}"
+	essid=$3
 
 
 	ifconfig $interface down
@@ -27,6 +28,7 @@ then
 	
 	ifconfig $interface up
 	nmcli radio wifi on
+	nmcli device wifi connect $essid
 	dhclient -v $interface &> /dev/null # get a new ip
 
 else
