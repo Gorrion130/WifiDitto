@@ -27,7 +27,7 @@ then
 	
 	ifconfig $interface up
 	nmcli device wifi connect $essid
-	dhclient -v $interface &> /dev/null # get a new ip
+	dhclient -r $interface &> /dev/null && dhclient -v $interface &> /dev/null # get a new ip
 
 else
 
