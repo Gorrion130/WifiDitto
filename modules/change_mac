@@ -8,7 +8,6 @@ then
 
 
 	ifconfig $interface down
-	dhclient -r $interface &> /dev/null # release ip
 
 	if [ "$1" = "reset" ]; then
 		echo 'Resetting MAC address...'
@@ -26,8 +25,8 @@ then
 	fi
 	
 	ifconfig $interface up
+	dhclient -r $interface &> /dev/null # release ip
 	nmcli device wifi connect $essid
-	dhclient -r $interface &> /dev/null && dhclient -v $interface &> /dev/null # get a new ip
 
 else
 
