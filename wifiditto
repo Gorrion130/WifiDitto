@@ -74,7 +74,7 @@ if [ $# -ge 2 ]; then
     # start testing macs
     echo "About to start testing access..."
     clear
-    sudo /usr/bin/modules/check_macs /usr/bin/harvested/$dt.macs $(wc -l < /usr/bin/harvested/$dt.macs) $interface
+    sudo /usr/bin/modules/check_macs /usr/bin/harvested/$dt.macs $(wc -l < /usr/bin/harvested/$dt.macs) $interface $essid
 
 else
 
