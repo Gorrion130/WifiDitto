@@ -17,6 +17,9 @@ git clone https://github.com/lakinduakash/linux-wifi-hotspot | tee -a $logfile
 echo "`date` - installing git repos..."
 cd linux-wifi-hotspot && make && sudo make install
 
+echo "`date` - installing WifiDitto..."
+cp -r $curdir/WifiDitto/wifiditto $curdir/WifiDitto/harvested $curdir/WifiDitto/modules /bin
+
 echo "`date` - Finish. You can delete the install script if you want ;)" >> $logfile
 
 echo "Done!"
