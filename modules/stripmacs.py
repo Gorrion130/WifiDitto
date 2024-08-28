@@ -11,10 +11,10 @@ counter = 0
 targetESSID = ' ' + str(sys.argv[3])
 
 # Navigate to the correct directory and open files for read/write
-inpFilename = os.path.abspath(os.path.dirname( __file__ )) + "/" + sys.argv[1]
+inpFilename = os.path.abspath(os.path.dirname( __file__ )) + " " + sys.argv[1]
 inputFile = open(inpFilename,"r")
 
-outFilename = os.path.abspath(os.path.dirname( __file__ )) + "/" + sys.argv[2]
+outFilename = os.path.abspath(os.path.dirname( __file__ )) + " " + sys.argv[2]
 outputFile = open(outFilename,"a")
 
 # Get AP's BSSID (MAC)
