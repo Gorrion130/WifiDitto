@@ -26,7 +26,8 @@ then
 	fi
 	
 	ifconfig $interface up
-	systemctl restart networkmanager
+	dhcpcd -k $interface
+	dhcpcd $interface
 	nmcli connection up $essid ifname $interface
 
 else
