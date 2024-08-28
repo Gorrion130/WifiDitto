@@ -18,7 +18,7 @@ echo "`date` - installing git repos..."
 cd linux-wifi-hotspot && make && sudo make install
 
 echo "`date` - installing WifiDitto..."
-cp -r $curdir/WifiDitto/wifiditto $curdir/WifiDitto/harvested $curdir/WifiDitto/modules /bin
+sudo cp -r $curdir/wifiditto $curdir/harvested $curdir/modules /bin
 
 echo "`date` - Finish. You can delete the install script if you want ;)" >> $logfile
 
