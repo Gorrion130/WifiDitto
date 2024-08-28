@@ -19,6 +19,7 @@ cd linux-wifi-hotspot && make && sudo make install
 
 echo "`date` - installing WifiDitto..."
 sudo cp -r $curdir/wifiditto $curdir/harvested $curdir/modules /bin
+sudo chmod +x /usr/bin/wifiditto
 
 echo "`date` - Finish. You can delete the install script if you want ;)" >> $logfile
 
