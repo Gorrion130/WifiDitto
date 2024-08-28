@@ -26,8 +26,6 @@ then
 	fi
 	
 	ifconfig $interface up
-	dhcpcd -k $interface
-	dhcpcd $interface
 	nmcli connection up $essid ifname $interface
 
 else
