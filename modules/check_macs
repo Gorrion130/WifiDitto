@@ -20,7 +20,7 @@ then
 
 		# change mac address
 		echo -n "Changing MAC... "
-		sudo /usr/bin/modules/change_mac $curmac $interface &> /dev/null
+		sudo /usr/bin/modules/change_mac $curmac $interface $essid &> /dev/null
 		nmcli device wifi connect $essid
 		echo "Done."
 
