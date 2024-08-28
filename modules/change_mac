@@ -21,12 +21,11 @@ then
 	else
 		echo 'Changing MAC address to $1'
 		macchanger -m $1 $interface # change current device mac to input mac
+		hostnamectl hostname --pretty --static $SRANDOM
 
 	fi
 	
 	ifconfig $interface up
-	dhclient -r &> /dev/null # release ip
-	dhclient &> /dev/null
 	nmcli device wifi connect $essid
 
 else
