@@ -4,7 +4,7 @@ maccount=$(($2))
 interface=$3
 essid=$4
 
-if [ $# -eq 3 ]
+if [ $# -eq 4 ]
 then
 	pwd
 	#for i in {1..number of macs}
@@ -74,6 +74,6 @@ else
 	echo "Incorrect number of arguments! (detected $#)"
 	echo ""
 	echo "Useage:"
-	echo "$0 {mac address file} {macs to check} {interface}"
+	echo "$0 {mac address file} {macs to check} {interface} {essid}"
 	echo ""
 fi
