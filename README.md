@@ -18,11 +18,11 @@ It's pretty easy! Just execute the following command:
 
 Just run WifiDitto with
 
-<pre><code>bash WifiDitto {wireless interface name} {target AP name}</code></pre>
+<pre><code>sudo wifiditto {wireless interface name} {target AP name}</code></pre>
 
 For example, if your interface was called <code>wlan0</code> and you were targeting <code>Free Hotel WiFi</code>, then you would run
 
-<pre><code>bash WifiDitto wlan0 'Free Hotel WiFi'</code></pre>
+<pre><code>sudo wifiditto wlan0 'Free Hotel WiFi'</code></pre>
 
 This will start scanning for associated MAC addresses. Once you think there are enough clients in airodump-ng, hit ctrl-c and then each MAC assoctiated to your target will be checked for internet access.
 
