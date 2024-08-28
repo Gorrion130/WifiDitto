@@ -5,11 +5,11 @@ logfile=installlog.txt
 
 echo "Thanks for using wifiditto! Today's installation log file will be in $curdir/installlog.txt!"
 
-echo "`date` - updating apt-get..." | tee -a $logfile
-sudo apt update | tee -a $logfile
+echo "`date` - updating dnf..." | tee -a $logfile
+sudo dnf update | tee -a $logfile
 
 echo "`date` - installing dependencies..." | tee -a $logfile
-sudo apt install -y aircrack-ng python3 git macchanger dnsmasq libgtk-3-dev build-essential gcc g++ pkg-config make hostapd libqrencode-dev libpng-dev | tee -a $logfile
+sudo dnf install -y aircrack-ng python3 git macchanger dnsmasq gtk3-devel gcc gcc-c++ kernel-devel pkg-config make hostapd qrencode-devel libpng-devel | tee -a $logfile
 
 echo "`date` - cloning git repos..."
 git clone https://github.com/lakinduakash/linux-wifi-hotspot | tee -a $logfile
