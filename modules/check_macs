@@ -2,6 +2,7 @@
 testip=https://1.1.1.1
 maccount=$(($2))
 interface=$3
+essid=$4
 
 if [ $# -eq 3 ]
 then
@@ -20,6 +21,7 @@ then
 		# change mac address
 		echo -n "Changing MAC... "
 		sudo /usr/bin/modules/change_mac $curmac $interface &> /dev/null
+		nmcli device wifi connect $essid
 		echo "Done."
 
 		# Tell the user whats happening
