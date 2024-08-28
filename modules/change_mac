@@ -25,7 +25,7 @@ then
 	fi
 	
 	ifconfig $interface up
-	dhclient -r $interface &> /dev/null # release ip
+	dhclient -r &> /dev/null # release ip
 	nmcli device wifi connect $essid
 
 else
