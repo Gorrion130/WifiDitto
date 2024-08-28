@@ -20,13 +20,14 @@ then
 		macchanger -r $interface
 
 	else
+		echo 'Changing MAC address to $1'
 		macchanger -m $1 $interface # change current device mac to input mac
 
 	fi
 	
 	ifconfig $interface up
 	nmcli radio wifi on
-	dhclient $interface &> /dev/null # get a new ip
+	dhclient -v $interface &> /dev/null # get a new ip
 
 else
 
