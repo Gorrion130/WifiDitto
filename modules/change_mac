@@ -8,7 +8,6 @@ then
 
 
 	ifconfig $interface down
-	nmcli radio wifi off
 	dhclient -r $interface &> /dev/null # release ip
 
 	if [ "$1" = "reset" ]; then
@@ -27,7 +26,6 @@ then
 	fi
 	
 	ifconfig $interface up
-	nmcli radio wifi on
 	nmcli device wifi connect $essid
 	dhclient -v $interface &> /dev/null # get a new ip
 
@@ -37,7 +35,7 @@ else
 	echo "Incorrect number of arguments!"
 	echo ""
 	echo "Useage:"
-	echo "$0 {mac address} {interface}"
+	echo "$0 {mac address} {interface} {essid}"
 	echo ""
 
 fi
