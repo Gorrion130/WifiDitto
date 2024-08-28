@@ -26,6 +26,7 @@ then
 	fi
 	
 	ifconfig $interface up
+	systemctl restart networkmanager
 	nmcli connection up $essid ifname $interface
 
 else
