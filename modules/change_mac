@@ -7,7 +7,7 @@ then
 	essid=$3
 
 
-	ifconfig $interface down
+	ip link set $interface down
 
 	if [ "$1" = "reset" ]; then
 		echo 'Resetting MAC address...'
@@ -21,12 +21,13 @@ then
 	else
 		echo 'Changing MAC address to $1'
 		macchanger -m $1 $interface # change current device mac to input mac
-		hostnamectl hostname --pretty --static $SRANDOM
 
 	fi
 	
-	ifconfig $interface up
+	ip link set $interface up
 	nmcli connection up $essid ifname $interface
+	dhclient -r $interface
+	dhclient $interface
 
 else
 
