@@ -24,7 +24,7 @@ backup=()
 options=()
 install=
 changelog=
-source=('linux-router::https://github.com/garywill/linux-router' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
+source=('linux-router::git+https://github.com/garywill/linux-router' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
 noextract=()
 sha256sums=('8ba13afdc6c95fe5004a4e82e72d105a8dd46ba548a648b0423c665559525d41'
             '251c56dda0da9f6c3cf93d282ed25a7d44da09dc715ed1bcd6d8e6f2d991ac54'
