@@ -24,8 +24,7 @@ backup=()
 options=()
 install=
 changelog=
-source=('create_ap::git://github.com/lakinduakash/linux-wifi-hotspot.git'
-	'wifiditto' 'harvested' 'modules')
+source=('linux-wifi-hotspot::git://github.com/lakinduakash/linux-wifi-hotspot.git' 'wifiditto' 'harvested' 'modules')
 noextract=()
 sha256sums=('SKIP')
 
