@@ -53,7 +53,7 @@ then
 				echo "Enjoy your free WiFi ;)"
 				echo "Exiting..."
 			else
-				echo '\nHotspot Name: '
+				echo 'Hotspot Name: '
 				read name
 				echo "Hotspot Password: "
 				read password
