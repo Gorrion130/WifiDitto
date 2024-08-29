@@ -57,7 +57,9 @@ then
 				read name
 				echo "Hotspot Password: "
 				read password
-				sudo lnxrouter -i $interface --ap $interface MyAccessPoint -p MyPassPhrase
+				echo "Hotspot Interface: "
+				read hinterface
+				sudo lnxrouter -i $interface --ap $hinterface MyAccessPoint -p MyPassPhrase
 			fi
 
 			# script end :)
