@@ -28,10 +28,15 @@ source=('linux-wifi-hotspot::git+https://github.com/lakinduakash/linux-wifi-hots
 noextract=()
 sha256sums=('SKIP')
 
+prepare() {
+	cd linux-wifi-hotspot
+	make
+}
+
+
 package() {
+	install -Dm644 ./wifiditto "/bin/wifiditto"
+	sudo cp -r harvested modules /bin
 	cd linux-wifi-hotspot
 	make install
- 	install -Dm644 ./wifiditto "/bin/wifiditto"
-	sudo cp -r harvested modules /bin
-
 }
