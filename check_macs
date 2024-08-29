@@ -53,7 +53,11 @@ then
 				echo "Enjoy your free WiFi ;)"
 				echo "Exiting..."
 			else
-				wihotspot&
+				echo "Hotspot Name: "
+				read name
+				echo "Hotspot Password: "
+				read password
+				sudo lnxrouter -i $interface --ap $interface MyAccessPoint -p MyPassPhrase
 			fi
 
 			# script end :)
