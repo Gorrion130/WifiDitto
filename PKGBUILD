@@ -26,6 +26,7 @@ install=
 changelog=
 source=('linux-wifi-hotspot::git+https://github.com/lakinduakash/linux-wifi-hotspot' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
 noextract=()
+md5sums('SKIP')
 
 prepare() {
 	cd linux-wifi-hotspot
