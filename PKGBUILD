@@ -24,7 +24,7 @@ backup=()
 options=()
 install=
 changelog=
-source=('linux-wifi-hotspot::git+https://github.com/lakinduakash/linux-wifi-hotspot' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
+source=('linux-router::https://github.com/garywill/linux-router' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
 noextract=()
 sha256sums=('SKIP'
             '251c56dda0da9f6c3cf93d282ed25a7d44da09dc715ed1bcd6d8e6f2d991ac54'
@@ -51,6 +51,6 @@ package() {
 	sudo chmod +x /bin/modules/check_macs
  	sudo chmod +x /bin/modules/change_mac
   	sudo chmod +x /bin/modules/stripmacs.py
-	cd linux-wifi-hotspot
-	sudo make install
+	cd linux-router
+	sudo install -Dm644 ./lnxrouter "/bin/lnxrouter"
 }
