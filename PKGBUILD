@@ -33,13 +33,6 @@ sha256sums=('SKIP'
             '4339be06608f44db416649c164446306014f23944b45e2319bce791c06a2bb06'
             '262edc2e565c1c5314d679e973808d07d6b66d2289aa25a364cec19ac3f87f42')
 
-
-prepare() {
-	cd linux-wifi-hotspot
-	make
-}
-
-
 package() {
 	sudo mkdir -p /bin/harvested
  	sudo mkdir -p /bin/modules
