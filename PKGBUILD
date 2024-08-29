@@ -47,7 +47,7 @@ package() {
   	sudo install -Dm644 ./check_macs "/bin/modules/check_macs"
    	sudo install -Dm644 ./stripmacs.py "/bin/modules/stripmacs.py"
  	sudo install -Dm644 ./wifiditto "/bin/wifiditto"
-        sudo chmod +x wifiditto
+        sudo chmod +x /bin/wifiditto
 	cd linux-wifi-hotspot
 	sudo make install
 }
