@@ -31,7 +31,8 @@ sha256sums=('SKIP')
 
 package() {
 	cd "$pkgname-$pkgver"
-	install -Dm644 ./wifiditto "/bin/wifiditto"
+	make install
+ 	install -Dm644 ./wifiditto "/bin/wifiditto"
 	sudo cp -r harvested modules /bin
 
 }
