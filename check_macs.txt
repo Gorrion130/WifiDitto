@@ -1,0 +1,79 @@
+#!/bin/bash
+testip=https://one.one.one.one
+maccount=$(($2))
+interface=$3
+essid=$4
+
+if [ $# -eq 4 ]
+then
+	pwd
+	#for i in {1..number of macs}
+	i=1
+
+	echo "Starting! Testing $maccount macs..."
+
+	while [ $i -le $maccount ]; do
+		echo ""
+
+		# Get next mac address
+		curmac=$(head -n $i $1 | tail -n 1)
+
+		# change mac address
+		echo -n "Changing MAC... "
+		sudo /usr/bin/modules/change_mac $curmac $interface $essid &> /dev/null
+		echo "Done."
+
+		# Tell the user whats happening
+                echo "$i/$2"
+		echo "MAC: $curmac"
+
+		echo -n "IP:  "
+                curip=$(ifconfig $interface | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p')
+                echo "$curip"
+		sleep 1
+
+		# Try downloading site
+
+		#wget --no-cache --no-cookies --no-http-keep-alive -T 10 --show-progress -nv $testip -o wgetout &> /dev/null
+		echo -n "Checking access... "
+		httpcode=$(curl -s --head $testip | grep "HTTP/" -m 1 | awk '{print $2}')
+
+		# Test connection
+
+		#httpcode=$(grep -v $testip wgetout | grep -v saved | cut -c44-)
+		echo "$httpcode"
+
+		if [ "$httpcode" = "200" ]
+		then # Connection!
+			echo "Access detected!"
+			read -n 1 -p "Start hotspot? (Y/n): " starthotspot
+
+			if [ "$starthotspot" = "n" ]; then
+				echo
+				echo "Enjoy your free WiFi ;)"
+				echo "Exiting..."
+			else
+				wihotspot&
+			fi
+
+			# script end :)
+			exit
+
+		else # No connection
+			echo "No access."
+		fi
+		echo ""
+		echo "----------------------------------------"
+		echo ""
+		i=$(($i + 1))
+	done
+	echo "No associated MAC addresses found. Exiting..."
+	exit
+else
+	echo ""
+	echo "Incorrect number of arguments! (detected $#)"
+	echo ""
+	echo "Useage:"
+	echo "$0 {mac address file} {macs to check} {interface} {essid}"
+	echo ""
+fi

@@ -1,0 +1,41 @@
+#!/bin/bash
+
+if [ $# -eq 3 ]
+then
+	interface=$2
+        interfacemon="${interface}"
+	essid=$3
+
+
+	ip link set $interface down
+
+	if [ "$1" = "reset" ]; then
+		echo 'Resetting MAC address...'
+		echo
+		macchanger -p $interface
+
+	elif [ "$1" = "random" ]; then
+		echo 'Randomising MAC address...'
+		macchanger -r $interface
+
+	else
+		echo 'Changing MAC address to $1'
+		macchanger -m $1 $interface # change current device mac to input mac
+
+	fi
+	
+	ip link set $interface up
+	nmcli connection up $essid ifname $interface
+	dhclient -r $interface
+	dhclient $interface
+
+else
+
+	echo ""
+	echo "Incorrect number of arguments!"
+	echo ""
+	echo "Useage:"
+	echo "$0 {mac address} {interface} {essid}"
+	echo ""
+
+fi
