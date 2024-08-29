@@ -27,7 +27,7 @@ changelog=
 source=('linux-wifi-hotspot::git+https://github.com/lakinduakash/linux-wifi-hotspot' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
 noextract=()
 sha256sums=('SKIP'
-            '99acd4507f60c870f14b0138be8e67b84fe829349fd8da09d86bc02f9b83bb4a'
+            '251c56dda0da9f6c3cf93d282ed25a7d44da09dc715ed1bcd6d8e6f2d991ac54'
             'f1c0528a7d0a5cc53bb7bc79ac2e66282198557120b6aece11a5589824ff759d'
             'bfb2fff69e216adecb0d48576c172fe841e3a92d5be67c3ff9fd00ecfcff150d'
             'd0eebd1152dc806dd4e543fb8a921d05a7ec946c4807066819068052e73def8a'
