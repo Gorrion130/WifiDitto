@@ -40,8 +40,8 @@ prepare() {
 
 
 package() {
-	sudo mkdir /bin/harvested
- 	sudo mkdir /bin/modules
+	sudo mkdir -p /bin/harvested
+ 	sudo mkdir -p /bin/modules
 	sudo install -Dm644 ./clearmacs.sh "/bin/harvested/clearmacs.sh"
  	sudo install -Dm644 ./change_mac "/bin/modules/change_mac"
   	sudo install -Dm644 ./check_macs "/bin/modules/check_macs"
