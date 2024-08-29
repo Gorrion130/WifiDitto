@@ -8,7 +8,7 @@ fi
 if [ $# -ge 2 ]; then
 
     interface=$1
-    interfacemon="${interface}"
+    interfacemon="${interface}mon"
 
     essid=$2
 
