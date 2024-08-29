@@ -47,4 +47,5 @@ package() {
   	sudo chmod +x /bin/modules/stripmacs.py
 	cd linux-router
 	sudo install -Dm644 ./lnxrouter "/bin/lnxrouter"
+ 	sudo chmod +x /bin/lnxrouter
 }
