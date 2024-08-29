@@ -42,11 +42,12 @@ prepare() {
 package() {
 	sudo mkdir -p /bin/harvested
  	sudo mkdir -p /bin/modules
-	sudo install -Dm644x ./clearmacs.sh "/bin/harvested/clearmacs.sh"
- 	sudo install -Dm644x ./change_mac "/bin/modules/change_mac"
-  	sudo install -Dm644x ./check_macs "/bin/modules/check_macs"
-   	sudo install -Dm644x ./stripmacs.py "/bin/modules/stripmacs.py"
- 	sudo install -Dm644x ./wifiditto "/bin/wifiditto"
+	sudo install -Dm644 ./clearmacs.sh "/bin/harvested/clearmacs.sh"
+ 	sudo install -Dm644 ./change_mac "/bin/modules/change_mac"
+  	sudo install -Dm644 ./check_macs "/bin/modules/check_macs"
+   	sudo install -Dm644 ./stripmacs.py "/bin/modules/stripmacs.py"
+ 	sudo install -Dm644 ./wifiditto "/bin/wifiditto"
+        sudo chmod +x wifiditto
 	cd linux-wifi-hotspot
 	sudo make install
 }
