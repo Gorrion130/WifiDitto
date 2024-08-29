@@ -26,7 +26,11 @@ install=
 changelog=
 source=('linux-wifi-hotspot::git+https://github.com/lakinduakash/linux-wifi-hotspot' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
 noextract=()
-sha256sum=$(git -c core.abbrev=no -C "$dir" archive --format tar "$fragval" | "${integ}sum" 2>&1)
+sha256sums=('99acd4507f60c870f14b0138be8e67b84fe829349fd8da09d86bc02f9b83bb4a'
+            'f1c0528a7d0a5cc53bb7bc79ac2e66282198557120b6aece11a5589824ff759d'
+            'bfb2fff69e216adecb0d48576c172fe841e3a92d5be67c3ff9fd00ecfcff150d'
+            'd0eebd1152dc806dd4e543fb8a921d05a7ec946c4807066819068052e73def8a'
+            '262edc2e565c1c5314d679e973808d07d6b66d2289aa25a364cec19ac3f87f42')
 
 prepare() {
 	cd linux-wifi-hotspot
