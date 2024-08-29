@@ -24,7 +24,7 @@ backup=()
 options=()
 install=
 changelog=
-source=('linux-wifi-hotspot::git+https://github.com/lakinduakash/linux-wifi-hotspot' 'wifiditto' 'harvested/clearmacs.sh' 'modules/change_mac' 'modules/check_macs' 'modules/stripmacs.py')
+source=('linux-wifi-hotspot::git+https://github.com/lakinduakash/linux-wifi-hotspot' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
 noextract=()
 sha256sums=('SKIP')
 
@@ -35,10 +35,10 @@ prepare() {
 
 
 package() {
-	install -Dm644 ./harvested/clearmacs.sh "/bin/harvested/clearmacs.sh"
- 	install -Dm644 ./modules/change_mac "/bin/modules/change_mac"
-  	install -Dm644 ./modules/check_macs "/bin/modules/check_macs"
-   	install -Dm644 ./modules/stripmacs.py "/bin/modules/stripmacs.py"
+	install -Dm644 ./clearmacs.sh "/bin/harvested/clearmacs.sh"
+ 	install -Dm644 ./change_mac "/bin/modules/change_mac"
+  	install -Dm644 ./check_macs "/bin/modules/check_macs"
+   	install -Dm644 ./stripmacs.py "/bin/modules/stripmacs.py"
  	install -Dm644 ./wifiditto "/bin/wifiditto"
 	sudo cp -r harvested modules /bin
 	cd linux-wifi-hotspot
