@@ -26,7 +26,7 @@ install=
 changelog=
 source=('linux-router::git+https://github.com/garywill/linux-router' 'wifiditto' 'clearmacs.sh' 'change_mac' 'check_macs' 'stripmacs.py')
 noextract=()
-sha256sums=('8ba13afdc6c95fe5004a4e82e72d105a8dd46ba548a648b0423c665559525d41'
+sha256sums=('SKIP'
             '251c56dda0da9f6c3cf93d282ed25a7d44da09dc715ed1bcd6d8e6f2d991ac54'
             'f1c0528a7d0a5cc53bb7bc79ac2e66282198557120b6aece11a5589824ff759d'
             'bfb2fff69e216adecb0d48576c172fe841e3a92d5be67c3ff9fd00ecfcff150d'
