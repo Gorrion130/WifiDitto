@@ -29,7 +29,7 @@ noextract=()
 sha256sums=('SKIP')
 
 package() {
-	cd "$pkgname-$pkgver"
+	cd linux-wifi-hotspot
 	make install
  	install -Dm644 ./wifiditto "/bin/wifiditto"
 	sudo cp -r harvested modules /bin
